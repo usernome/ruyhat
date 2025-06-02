@@ -8,98 +8,108 @@
         body {
             font-family: Arial, sans-serif;
             max-width: 100%;
-            width: 600px;
-            margin: 10px auto;
-            padding: 10px;
+            width: 100%;
+            margin: 0;
+            padding: 8px;
+            box-sizing: border-box;
+            background: #f5f5f5;
+        }
+        .form-container {
+            max-width: 400px;
+            margin: 0 auto;
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
         .form-group {
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             width: 100%;
         }
         label {
             display: block;
-            margin-bottom: 5px;
+            margin-bottom: 4px;
+            font-size: 14px;
+            color: #333;
         }
         input[type="text"], select {
             width: 100%;
-            padding: 12px; /* Increased padding for better touch targets */
-            font-size: 16px; /* Better font size for mobile */
+            padding: 8px;
+            font-size: 14px;
             border: 1px solid #ddd;
             border-radius: 4px;
             box-sizing: border-box;
         }
         button {
             width: 100%;
-            min-height: 44px; /* Minimum touch target size */
             padding: 10px;
-            font-size: 16px;
+            font-size: 14px;
             background-color: #007bff;
             color: white;
             border: none;
             border-radius: 4px;
             cursor: pointer;
         }
-        button:hover {
-            background-color: #0056b3;
-        }
         .checkbox-group {
-            margin: 15px 0;
+            margin: 10px 0;
             display: flex;
             align-items: center;
-            gap: 8px;
-        }
-        .checkbox-group input[type="checkbox"] {
-            margin: 0;
+            gap: 6px;
         }
         .checkbox-group label {
-            display: inline;
-            margin: 0;
+            font-size: 13px;
         }
-        /* Media query for small screens */
         @media screen and (max-width: 480px) {
-            body {
-                padding: 10px;
-                margin: 0;
+            body { padding: 5px; }
+            h1 { 
+                font-size: 20px;
+                margin: 10px 0;
+                text-align: center;
             }
-            h1 {
-                font-size: 24px;
+            .form-container {
+                padding: 10px;
+            }
+            input[type="text"], select {
+                padding: 6px;
             }
         }
     </style>
 </head>
 <body>
-    <h1>Profil</h1>
-    <form id="profileForm" onsubmit="return validateForm(event)">
-        <div class="form-group">
-            <label for="ism">Ism</label>
-            <input type="text" id="ism" name="ism" required>
-        </div>
-        
-        <div class="form-group">
-            <label for="yosh">Yosh</label>
-            <input type="text" id="yosh" name="yosh" required>
-        </div>
-        
-        <div class="form-group">
-            <label for="jins">Jins</label>
-            <select id="jins" name="jins" required>
-                <option value="Erkak">Erkak</option>
-                <option value="Ayol">Ayol</option>
-            </select>
-        </div>
-        
-        <div class="form-group">
-            <label for="kasb">Kasb</label>
-            <input type="text" id="kasb" name="kasb" required>
-        </div>
-        
-        <div class="checkbox-group">
-            <input type="checkbox" id="shartlar" name="shartlar" required>
-            <label for="shartlar">Maxfiylik shartlariga roziman</label>
-        </div>
-        
-        <button type="submit">Ro'yxatdan o'tish</button>
-    </form>
+    <div class="form-container">
+        <h1>Profil</h1>
+        <form id="profileForm" onsubmit="return validateForm(event)">
+            <div class="form-group">
+                <label for="ism">Ism</label>
+                <input type="text" id="ism" name="ism" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="yosh">Yosh</label>
+                <input type="text" id="yosh" name="yosh" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="jins">Jins</label>
+                <select id="jins" name="jins" required>
+                    <option value="Erkak">Erkak</option>
+                    <option value="Ayol">Ayol</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="kasb">Kasb</label>
+                <input type="text" id="kasb" name="kasb" required>
+            </div>
+            
+            <div class="checkbox-group">
+                <input type="checkbox" id="shartlar" name="shartlar" required>
+                <label for="shartlar">Maxfiylik shartlariga roziman</label>
+            </div>
+            
+            <button type="submit">Ro'yxatdan o'tish</button>
+        </form>
+    </div>
 
     <script>
         function validateForm(event) {
